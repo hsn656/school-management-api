@@ -47,6 +47,12 @@ config.dotEnv = {
     SHORT_TOKEN_SECRET,
 };
 
+config.auth = {
+    systemRoles : {
+        superAdmin: 'superAdmin',
+        admin: 'admin'
+    }
+}
 
 
 module.exports = config;

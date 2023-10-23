@@ -1,31 +1,54 @@
-module.exports = class User { 
+const bcrypt = require("bcryptjs");
 
-    constructor({utils, cache, config, cortex, managers, validators, mongomodels }={}){
-        this.config              = config;
-        this.cortex              = cortex;
-        this.validators          = validators; 
-        this.mongomodels         = mongomodels;
-        this.tokenManager        = managers.token;
-        this.usersCollection     = "users";
-        this.userExposed         = ['createUser'];
+module.exports = class UserManager {
+
+    constructor({ utils, cache, config, cortex, managers, validators, mongomodels } = {}) {
+        this.config = config;
+        this.cortex = cortex;
+        this.validators = validators;
+        this.mongomodels = mongomodels;
+        this.tokenManager = managers.token;
+        this.usersCollection = "users";
+        this.httpExposed = ['createUser', 'login'];
+        this.responseDispatcher = managers.responseDispatcher;
     }
 
-    async createUser({username, email, password}){
-        const user = {username, email, password};
+    async createUser({ __currentUser, username, password }) {
+        const alreadyRegisteredUSer = await this.mongomodels.user
+            .findOne({ username }, { _id: 1 })
+            .lean();
 
-        // Data validation
-        let result = await this.validators.user.createUser(user);
-        if(result) return result;
-        
-        // Creation Logic
-        let createdUser     = {username, email, password}
-        let longToken       = this.tokenManager.genLongToken({userId: createdUser._id, userKey: createdUser.key });
-        
-        // Response
+        if (alreadyRegisteredUSer) throw new Error('username already exists');
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+        let createdUser = await this.mongomodels.user.create({
+            username,
+            password: hashedPassword,
+            creator: __currentUser._id,
+            role: this.config.auth.systemRoles.admin
+        });
+
         return {
-            user: createdUser, 
-            longToken 
+            user: createdUser,
         };
     }
 
+    async login({ username, password }) {
+        const user = await this.mongomodels.user
+            .findOne({ username }, { password: 1 })
+            .lean();
+
+        if (!user) throw new Error('Invalid credentials');
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) throw new Error('Invalid credentials');
+        return {
+            accessToken: this.tokenManager.genLongToken({ userId: user._id, userKey: username }),
+        };
+    }
+
+    getUserById({ _id }) {
+        return this.mongomodels.user
+            .findOne({ _id })
+            .lean();
+    }
 }

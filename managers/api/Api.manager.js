@@ -11,7 +11,7 @@ module.exports = class ApiHandler {
      * @param {string} prop with key to scan for exposed methods
      */
 
-    constructor({config, cortex, cache, managers, mwsRepo, prop}){
+    constructor({config, cortex, cache, managers, validators, mwsRepo, prop}){
         this.config        = config;
         this.cache         = cache; 
         this.cortex        = cortex;
@@ -25,6 +25,7 @@ module.exports = class ApiHandler {
         this.fileUpload    = {};
         this.mwsStack        = {};
         this.mw            = this.mw.bind(this);
+        this.validators       = validators;
 
         /** filter only the modules that have interceptors */
         // console.log(`# Http API`);
@@ -78,7 +79,7 @@ module.exports = class ApiHandler {
                 });
             }
         });
-
+        console.log({methodMatrix: this.methodMatrix});
         /** expose apis through cortex */
         Object.keys(this.managers).forEach(mk=>{
             if(this.managers[mk].interceptor){
@@ -114,7 +115,7 @@ module.exports = class ApiHandler {
                 result = await targetModule[`${fnName}`](data);
             } catch (err){
                 console.log(`error`, err);
-                result.error = `${fnName} failed to execute`;
+                result.error = `${fnName} failed to execute, ${err.message}`;
             }
     
         if(cb)cb(result);
@@ -147,10 +148,16 @@ module.exports = class ApiHandler {
         let targetStack = this.mwsStack[`${moduleName}.${fnName}`];
 
         let hotBolt = this.mwsExec.createBolt({stack: targetStack, req, res, onDone: async ({req, res, results})=>{
+            let body = req.body || {};
+
+            /** validate request body if required */
+            if(this.validators[moduleName][fnName]){
+                let result = await this.validators[moduleName][fnName](body);
+                if(result)
+                return this.managers.responseDispatcher.dispatch(res, {ok: false, errors: result, message: `validation error in function ${fnName} with module ${moduleName}`});
+            }
 
             /** executed after all middleware finished */
-
-            let body = req.body || {};
             let result = await this._exec({targetModule: this.managers[moduleName], fnName, data: {
                 ...body, 
                 ...results,

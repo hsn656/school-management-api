@@ -6,6 +6,20 @@ module.exports = {
             model: 'username',
             required: true,
         },
+        {
+            model: 'password',
+            required: true,
+        },
+    ],
+    login: [
+        {
+            model: 'username',
+            required: true,
+        },
+        {
+            model: 'password',
+            required: true,
+        },
     ],
 }
 
