@@ -66,6 +66,8 @@ module.exports = class UserManager {
             $set: {
                 password: hashedPassword
             }
+        },{
+            upsert: true
         })
     }
 }
