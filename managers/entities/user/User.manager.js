@@ -55,4 +55,15 @@ module.exports = class UserManager {
             .findOne({ _id })
             .lean();
     }
+
+    async _seedSuperAdmin() {
+        const hashedPassword = await bcrypt.hash(this.config.dotEnv.SUPERADMIN_PASSWORD, 10)
+        await this.mongomodels.user.findOneAndUpdate({
+            username: this.config.dotEnv.SUPERADMIN_USERNAME,
+        }, {
+            $set: {
+                password: hashedPassword
+            }
+        })
+    }
 }
