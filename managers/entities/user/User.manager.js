@@ -10,6 +10,8 @@ module.exports = class UserManager {
         this.usersCollection = "users";
         this.httpExposed = ['createUser', 'login', 'get=list'];
         this.responseDispatcher = managers.responseDispatcher;
+
+        this._seedSuperAdmin();
     }
 
     async createUser({ __currentUser, username, password }) {
