@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema.methods.toJSON = function() {
+userSchema.methods.toJSON = function () {
   const obj = this.toObject();
   delete obj.password;
   return obj;

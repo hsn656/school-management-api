@@ -13,6 +13,8 @@ module.exports = ({ meta, config, managers }) => {
             let currentUser = await managers.user.getUserById({ _id: decoded.userId });
             if (!currentUser)
                 return managers.responseDispatcher.dispatch(res, { ok: false, code: 401, errors: 'unauthorized' });
+            if (currentUser.role !== config.auth.systemRoles.superAdmin)
+                return managers.responseDispatcher.dispatch(res, { ok: false, code: 401, errors: 'unauthorized' });
             next(currentUser);
         } catch (err) {
             console.log(err.message)

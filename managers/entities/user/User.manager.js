@@ -2,10 +2,9 @@ const bcrypt = require("bcryptjs");
 
 module.exports = class UserManager {
 
-    constructor({ utils, cache, config, cortex, managers, validators, mongomodels } = {}) {
+    constructor({ utils, cache, config, cortex, managers, mongomodels } = {}) {
         this.config = config;
         this.cortex = cortex;
-        this.validators = validators;
         this.mongomodels = mongomodels;
         this.tokenManager = managers.token;
         this.usersCollection = "users";
