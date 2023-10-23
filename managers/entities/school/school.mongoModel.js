@@ -6,12 +6,12 @@ const SchoolSchema = new mongoose.Schema(
     name: { type: String, required: true },
     creator: {
       type: mongoose.Schema.ObjectId,
-      ref: userMongoModel.name,
+      ref: 'User',
     },
     admins: {
       type: [{
         type: mongoose.Schema.ObjectId,
-        ref: userMongoModel.name,
+        ref: 'User',
       }],
       default: []
     }

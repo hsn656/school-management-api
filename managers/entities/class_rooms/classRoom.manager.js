@@ -4,8 +4,16 @@ module.exports = class ClassRoomManager {
         this.config = config;
         this.cortex = cortex;
         this.mongomodels = mongomodels;
-        this.httpExposed = ['create', 'put=update', 'delete=delete'];
+        this.httpExposed = ['get=list', 'create', 'put=update', 'delete=delete'];
         this.responseDispatcher = managers.responseDispatcher;
+    }
+
+    async list({ __admin }) {
+        const schoolIds = await this.mongomodels.school.distinct('_id', { admins: __admin._id })
+        return this.mongomodels.classRoom.find({ school: { $in: schoolIds } }).populate({
+            path: 'school',
+            select: 'name'
+        });
     }
 
     async create({ __admin, name, school }) {
@@ -48,5 +56,7 @@ module.exports = class ClassRoomManager {
         const school = await this.mongomodels.school.findById(classRoom.school, { admins: 1 });
         if (!school?.admins?.includes(admin._id))
             throw new Error('not authorized');
+
+        return classRoom;
     }
 }

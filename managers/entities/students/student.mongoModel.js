@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const userMongoModel = require('../user/user.mongoModel');
-const schoolMongoModel = require('../school/school.mongoModel');
 
 const ClassRoomSchema = new mongoose.Schema(
   {
@@ -12,9 +10,13 @@ const ClassRoomSchema = new mongoose.Schema(
     school: {
       type: mongoose.Schema.ObjectId,
       ref: 'School',
+    },
+    classRoom: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'ClassRoom',
     }
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("ClassRoom", ClassRoomSchema);
+module.exports = mongoose.model("Student", ClassRoomSchema);

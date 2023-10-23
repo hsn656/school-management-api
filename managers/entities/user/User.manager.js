@@ -8,7 +8,7 @@ module.exports = class UserManager {
         this.mongomodels = mongomodels;
         this.tokenManager = managers.token;
         this.usersCollection = "users";
-        this.httpExposed = ['createUser', 'login'];
+        this.httpExposed = ['createUser', 'login', 'get=list'];
         this.responseDispatcher = managers.responseDispatcher;
     }
 
@@ -43,6 +43,11 @@ module.exports = class UserManager {
         return {
             accessToken: this.tokenManager.genLongToken({ userId: user._id, userKey: username }),
         };
+    }
+
+    list({ __superAdmin }) {
+        return this.mongomodels.user
+            .find();
     }
 
     getUserById({ _id }) {
