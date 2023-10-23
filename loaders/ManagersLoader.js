@@ -1,11 +1,13 @@
 const MiddlewaresLoader     = require('./MiddlewaresLoader');
-const ApiHandler            = require("../managers/api/Api.manager");
+const ApiHandler            = require('../managers/api/Api.manager');
 const LiveDB                = require('../managers/live_db/LiveDb.manager');
 const UserServer            = require('../managers/http/UserServer.manager');
 const ResponseDispatcher    = require('../managers/response_dispatcher/ResponseDispatcher.manager');
 const VirtualStack          = require('../managers/virtual_stack/VirtualStack.manager');
 const ValidatorsLoader      = require('./ValidatorsLoader');
 const ResourceMeshLoader    = require('./ResourceMeshLoader');
+const MongoLoader    = require('./MongoLoader');
+
 const utils                 = require('../libs/utils');
 
 const systemArch            = require('../static_arch/main.system');
@@ -35,10 +37,9 @@ module.exports = class ManagersLoader {
             aeon,
             managers: this.managers, 
             validators: this.validators,
-            // mongomodels: this.mongomodels,
+            mongomodels: this.mongomodels,
             resourceNodes: this.resourceNodes,
         };
-        
     }
 
     _preload(){
@@ -47,12 +48,11 @@ module.exports = class ManagersLoader {
             customValidators: require('../managers/_common/schema.validators'),
         });
         const resourceMeshLoader  = new ResourceMeshLoader({})
-        // const mongoLoader      = new MongoLoader({ schemaExtension: "mongoModel.js" });
+        const mongoLoader      = new MongoLoader({ schemaExtension: "mongoModel.js" });
 
         this.validators           = validatorsLoader.load();
         this.resourceNodes        = resourceMeshLoader.load();
-        // this.mongomodels          = mongoLoader.load();
-
+        this.mongomodels          = mongoLoader.load();
     }
 
     load() {
@@ -71,9 +71,7 @@ module.exports = class ManagersLoader {
         this.managers.userApi             = new ApiHandler({...this.injectable,...{prop:'httpExposed'}});
         this.managers.userServer          = new UserServer({ config: this.config, managers: this.managers });
 
-       
         return this.managers;
-
     }
 
 }
