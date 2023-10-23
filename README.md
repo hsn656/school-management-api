@@ -35,6 +35,10 @@ npm start
 - there is no another way to create super-admin user.
 
 ## Try API Using Postman
+1. go to `<uri>/static` or visit https://school-management-api-7y93.onrender.com/static/
+
+
+## Try API Using Postman
 1. open postmain
 2. press import and browser to the app
 3. you will find it "documentaion/axion.postman_collection.json"
