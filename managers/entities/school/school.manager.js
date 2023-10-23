@@ -8,19 +8,21 @@ module.exports = class SchoolManager {
         this.responseDispatcher = managers.responseDispatcher;
     }
 
-    async createSchool({ __superAdmin, name }) {
+    async createSchool({ __superAdmin, name, admins }) {
         let createdSchool = await this.mongomodels.school.create({
             name,
-            creator: __superAdmin._id
+            creator: __superAdmin._id,
+            admins
         });
 
         return createdSchool;
     }
 
-    async updateSchool({ __superAdmin, name, id }) {
+    async updateSchool({ __superAdmin, name, admins, id }) {
         return this.mongomodels.school.findByIdAndUpdate(id, {
             $set: {
-                name
+                name,
+                admins
             }
         }, { new: true });
     }

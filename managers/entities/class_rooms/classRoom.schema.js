@@ -1,5 +1,7 @@
+
+
 module.exports = {
-    createSchool: [
+    create: [
         {
             path: 'name',
             type: 'string',
@@ -7,34 +9,25 @@ module.exports = {
             required: true,
         },
         {
-            path: 'admins',
-            type: 'Array',
-            items: {
-                type: 'String',
-            }
+            path: 'school',
+            type: 'string',
+            required: true,
         }
     ],
-    updateSchool: [
+    update: [
+        {
+            path: 'name',
+            type: 'string',
+            length: { min: 3, max: 100 },
+            required: true,
+        },
         {
             path: 'id',
             type: 'string',
             required: true,
         },
-        {
-            path: 'name',
-            type: 'string',
-            length: { min: 3, max: 100 },
-            required: true,
-        },
-        {
-            path: 'admins',
-            type: 'Array',
-            items: {
-                type: 'String',
-            }
-        }
     ],
-    deleteSchool: [
+    delete: [
         {
             path: 'id',
             type: 'string',
@@ -42,3 +35,5 @@ module.exports = {
         },
     ],
 }
+
+
