@@ -1,0 +1,1653 @@
+{
+	"info": {
+		"_postman_id": "de6b14ff-8beb-4a17-9d9b-4702c82b32e6",
+		"name": "axion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19952375",
+		"_collection_link": "https://blue-escape-486215.postman.co/workspace/My-Workspace~d4b37d56-b546-45d0-840b-6f0b555b4ff8/collection/19952375-de6b14ff-8beb-4a17-9d9b-4702c82b32e6?action=share&source=collection_link&creator=19952375"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM2M2IzMzg1N2U3MjcyMGUzNTRhNGEiLCJpYXQiOjE2OTgwNTI5MTUsImV4cCI6MTc5MjcyNTcxNX0.9em1NXAQaqYq9LtHCcDf_DNN27DIjX8xdF1Voax0jKU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin2\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/createUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM2M2IzMzg1N2U3MjcyMGUzNTRhNGEiLCJpYXQiOjE2OTgwNTI5MTUsImV4cCI6MTc5MjcyNTcxNX0.9em1NXAQaqYq9LtHCcDf_DNN27DIjX8xdF1Voax0jKU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/user/createUser",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"createUser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-D4jQTOwZur0wtKOI18BHhPrmfCg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 10:01:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"user\": {\n            \"username\": \"admin1\",\n            \"role\": \"admin\",\n            \"_id\": \"6536448034d19902e4dc8869\",\n            \"createdAt\": \"2023-10-23T10:01:36.189Z\",\n            \"updatedAt\": \"2023-10-23T10:01:36.189Z\",\n            \"__v\": 0\n        }\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/user/list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "539"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21b-tZGSbFgmp2EoMw+t0ph7YTXaBTs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 13:03:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": [\n        {\n            \"_id\": \"65363b33857e72720e354a4a\",\n            \"username\": \"hsn\",\n            \"email\": \"hsn@email.com\",\n            \"createdAt\": \"2023-10-23T09:21:55.713Z\",\n            \"updatedAt\": \"2023-10-23T09:21:55.713Z\",\n            \"__v\": 0,\n            \"role\": \"superAdmin\"\n        },\n        {\n            \"_id\": \"6536448034d19902e4dc8869\",\n            \"username\": \"admin1\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2023-10-23T10:01:36.189Z\",\n            \"updatedAt\": \"2023-10-23T10:01:36.189Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"653660c5fc75183689563e91\",\n            \"username\": \"admin2\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2023-10-23T12:02:13.843Z\",\n            \"updatedAt\": \"2023-10-23T12:02:13.843Z\",\n            \"__v\": 0\n        }\n    ],\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"",
+									"",
+									"",
+									"pm.collectionVariables.set(\"token\", data.data.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM2M2IzMzg1N2U3MjcyMGUzNTRhNGEiLCJpYXQiOjE2OTgwNTI5MTUsImV4cCI6MTc5MjcyNTcxNX0.9em1NXAQaqYq9LtHCcDf_DNN27DIjX8xdF1Voax0jKU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM2M2IzMzg1N2U3MjcyMGUzNTRhNGEiLCJpYXQiOjE2OTgwNTI5MTUsImV4cCI6MTc5MjcyNTcxNX0.9em1NXAQaqYq9LtHCcDf_DNN27DIjX8xdF1Voax0jKU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"hsn\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/user/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-yL8xYwhVXL6Cb1frShfrP90cy98\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 10:52:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyS2V5IjoiaHNuIiwidXNlcklkIjoiNjUzNjNiMzM4NTdlNzI3MjBlMzU0YTRhIiwiaWF0IjoxNjk4MDU4MzIxLCJleHAiOjE3OTI3MzExMjF9.jTgt-2czAYisX5h9CekxHeWPtB8gODLXhpDVp60SS-c\"\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "school",
+			"item": [
+				{
+					"name": "create school",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"school 1\",\n    \"admins\": [\n        \"6536448034d19902e4dc8869\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/school/createSchool",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"school",
+								"createSchool"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"school 1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/school/createSchool",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"school",
+										"createSchool"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-vX903BB/RH6HpScMWY+a802Xw1k\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 10:55:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"name\": \"school 1\",\n        \"creator\": \"65363b33857e72720e354a4a\",\n        \"_id\": \"65365138b0022efb498e6855\",\n        \"createdAt\": \"2023-10-23T10:55:52.850Z\",\n        \"updatedAt\": \"2023-10-23T10:55:52.850Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/school/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"school",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/school/list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"school",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "523"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20b-X16gFEaIFECy7irzOIH+qVTgbjY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 12:52:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": [\n        {\n            \"_id\": \"6536592613f5fe339873ee1a\",\n            \"name\": \"school 1\",\n            \"creator\": {\n                \"_id\": \"65363b33857e72720e354a4a\",\n                \"username\": \"hsn\"\n            },\n            \"admins\": [\n                \"6536448034d19902e4dc8869\"\n            ],\n            \"createdAt\": \"2023-10-23T11:29:42.687Z\",\n            \"updatedAt\": \"2023-10-23T11:29:42.687Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65365f6ce863bb62c34f5ca1\",\n            \"name\": \"school 1\",\n            \"creator\": {\n                \"_id\": \"65363b33857e72720e354a4a\",\n                \"username\": \"hsn\"\n            },\n            \"admins\": [\n                \"6536448034d19902e4dc8869\"\n            ],\n            \"createdAt\": \"2023-10-23T11:56:28.472Z\",\n            \"updatedAt\": \"2023-10-23T11:56:28.472Z\",\n            \"__v\": 0\n        }\n    ],\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update school",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"school 2\",\n    \"id\": \"65365138b0022efb498e6855\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/school/updateSchool",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"school",
+								"updateSchool"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update school",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"school 2\",\n    \"id\": \"65365138b0022efb498e6855\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/school/updateSchool",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"school",
+										"updateSchool"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-YMdm2LC6tESJthU272UVxuKf25w\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 10:58:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"_id\": \"65365138b0022efb498e6855\",\n        \"name\": \"school 2\",\n        \"creator\": \"65363b33857e72720e354a4a\",\n        \"createdAt\": \"2023-10-23T10:55:52.850Z\",\n        \"updatedAt\": \"2023-10-23T10:58:43.953Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"65364f052bde8c04d6a2dab2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/school/deleteSchool",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"school",
+								"deleteSchool"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete school",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"65364f052bde8c04d6a2dab2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/school/deleteSchool",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"school",
+										"deleteSchool"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-4r3MCqNf8JafEcQAiipvB5FwrL8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 11:02:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"_id\": \"65364f052bde8c04d6a2dab2\",\n        \"name\": \"school 1\",\n        \"creator\": \"65363b33857e72720e354a4a\",\n        \"createdAt\": \"2023-10-23T10:46:29.151Z\",\n        \"updatedAt\": \"2023-10-23T10:46:29.151Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "class rooms",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"classRoom 1\",\n    \"school\": \"65365f6ce863bb62c34f5ca1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/classRoom/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"classRoom",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"classRoom 1\",\n    \"school\": \"65365f6ce863bb62c34f5ca1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/classRoom/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"classRoom",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-LC5RZzMR/SpetHtujMerFLhrDT0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 12:40:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"name\": \"classRoom 1\",\n        \"creator\": \"6536448034d19902e4dc8869\",\n        \"school\": \"65365f6ce863bb62c34f5ca1\",\n        \"_id\": \"653669a83c2aa812f88cd8fc\",\n        \"createdAt\": \"2023-10-23T12:40:08.885Z\",\n        \"updatedAt\": \"2023-10-23T12:40:08.885Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/classRoom/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"classRoom",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/classRoom/list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"classRoom",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1491"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5d3-5lUVxBGU9m0gNO+TgyJWS9lCwX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 13:01:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": [\n        {\n            \"_id\": \"65365fc30871a5552532f6ad\",\n            \"name\": \"classRoom 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"createdAt\": \"2023-10-23T11:57:55.799Z\",\n            \"updatedAt\": \"2023-10-23T11:57:55.799Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65365fdd0871a5552532f6b2\",\n            \"name\": \"classRoom 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"createdAt\": \"2023-10-23T11:58:21.641Z\",\n            \"updatedAt\": \"2023-10-23T11:58:21.641Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6536600fed50a8607e80fdd6\",\n            \"name\": \"classRoom 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"createdAt\": \"2023-10-23T11:59:11.992Z\",\n            \"updatedAt\": \"2023-10-23T11:59:11.992Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6536609270aa02775c4e5c6e\",\n            \"name\": \"classRoom 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"createdAt\": \"2023-10-23T12:01:22.884Z\",\n            \"updatedAt\": \"2023-10-23T12:01:22.884Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"653662f4b1f8c384c333b9f0\",\n            \"name\": \"classRoom 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"createdAt\": \"2023-10-23T12:11:32.374Z\",\n            \"updatedAt\": \"2023-10-23T12:11:32.374Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"653669a83c2aa812f88cd8fc\",\n            \"name\": \"classRoom 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"createdAt\": \"2023-10-23T12:40:08.885Z\",\n            \"updatedAt\": \"2023-10-23T12:40:08.885Z\",\n            \"__v\": 0\n        }\n    ],\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"class room1\",\n    \"id\": \"65365fb6e863bb62c34f5ca8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/classRoom/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"classRoom",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"class room1\",\n    \"id\": \"65365fb6e863bb62c34f5ca8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/classRoom/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"classRoom",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-FK1a/oytYMPUeVeEiNmvDu4V5Kk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 12:38:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"_id\": \"65365fb6e863bb62c34f5ca8\",\n        \"name\": \"class room1\",\n        \"creator\": \"6536448034d19902e4dc8869\",\n        \"school\": \"65365f6ce863bb62c34f5ca1\",\n        \"createdAt\": \"2023-10-23T11:57:42.141Z\",\n        \"updatedAt\": \"2023-10-23T12:38:18.043Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"65365fb6e863bb62c34f5ca8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/classRoom/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"classRoom",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"65365fb6e863bb62c34f5ca8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/classRoom/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"classRoom",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-FK1a/oytYMPUeVeEiNmvDu4V5Kk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 12:40:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"_id\": \"65365fb6e863bb62c34f5ca8\",\n        \"name\": \"class room1\",\n        \"creator\": \"6536448034d19902e4dc8869\",\n        \"school\": \"65365f6ce863bb62c34f5ca1\",\n        \"createdAt\": \"2023-10-23T11:57:42.141Z\",\n        \"updatedAt\": \"2023-10-23T12:38:18.043Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"student 1\",\n    \"classRoom\": \"65365fc30871a5552532f6ad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/student/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"student 1\",\n    \"classRoom\": \"65365fc30871a5552532f6ad\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/student/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-poyfVOS7XPGNLtUGQrJzEaOwYZw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 13:55:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"name\": \"student 1\",\n        \"creator\": \"6536448034d19902e4dc8869\",\n        \"classRoom\": \"65365fc30871a5552532f6ad\",\n        \"_id\": \"65367b50d381afa9c1b62c76\",\n        \"createdAt\": \"2023-10-23T13:55:28.289Z\",\n        \"updatedAt\": \"2023-10-23T13:55:28.289Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/student/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/student/list",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-qLybn6OJrBRL25zyp8eP8rznRsI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 14:05:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": [\n        {\n            \"_id\": \"65367cc6a6025c21ada011d8\",\n            \"name\": \"student 1\",\n            \"creator\": \"6536448034d19902e4dc8869\",\n            \"school\": {\n                \"_id\": \"65365f6ce863bb62c34f5ca1\",\n                \"name\": \"school 1\"\n            },\n            \"classRoom\": {\n                \"_id\": \"65365fc30871a5552532f6ad\",\n                \"name\": \"classRoom 1\"\n            },\n            \"createdAt\": \"2023-10-23T14:01:42.729Z\",\n            \"updatedAt\": \"2023-10-23T14:01:42.729Z\",\n            \"__v\": 0\n        }\n    ],\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"student 2\",\n    \"id\": \"65367cc6a6025c21ada011d8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/student/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"student 2\",\n    \"id\": \"65367cc6a6025c21ada011d8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/student/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"127-Rdfvtv+Y5oqpa7ZmfF5PNA9zERE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 14:19:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"_id\": \"65367cc6a6025c21ada011d8\",\n        \"name\": \"student 2\",\n        \"creator\": \"6536448034d19902e4dc8869\",\n        \"school\": \"65365f6ce863bb62c34f5ca1\",\n        \"classRoom\": \"65365fc30871a5552532f6ad\",\n        \"createdAt\": \"2023-10-23T14:01:42.729Z\",\n        \"updatedAt\": \"2023-10-23T14:19:57.925Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"65367cc6a6025c21ada011d8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/student/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"student",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"65367cc6a6025c21ada011d8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/student/delete",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"student",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "295"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"127-Rdfvtv+Y5oqpa7ZmfF5PNA9zERE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 14:22:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ok\": true,\n    \"data\": {\n        \"_id\": \"65367cc6a6025c21ada011d8\",\n        \"name\": \"student 2\",\n        \"creator\": \"6536448034d19902e4dc8869\",\n        \"school\": \"65365f6ce863bb62c34f5ca1\",\n        \"classRoom\": \"65365fc30871a5552532f6ad\",\n        \"createdAt\": \"2023-10-23T14:01:42.729Z\",\n        \"updatedAt\": \"2023-10-23T14:19:57.925Z\",\n        \"__v\": 0\n    },\n    \"errors\": [],\n    \"message\": \"\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
