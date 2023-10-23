@@ -34,7 +34,7 @@ npm start
 - you can change super admin credintial by updating the '.env' file following values: (SUPERADMIN_USERNAME - SUPERADMIN_PASSWORD)
 - there is no another way to create super-admin user.
 
-## Try API Using Postman
+## Try API Using Swagger
 1. go to `<uri>/static` or visit https://school-management-api-7y93.onrender.com/static/
 
 
