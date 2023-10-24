@@ -39,9 +39,9 @@ npm start
 
 
 ## Try API Using Postman
-1. open postmain
-2. press import and browser to the app
-3. you will find it "documentaion/axion.postman_collection.json"
+1. open postman
+2. press import and browse to the app
+3. you will find it at "documentaion/axion.postman_collection.json"
 4. you are ready now, enjoy ^_^
 
 
